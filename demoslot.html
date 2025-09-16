@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo Slot Game</title>
+    <style>
+        body { font-family: Arial, text-align: center; background: #111; color: #fff; }
+        .reel { font-size: 40px; margin: 10px; display: inline-block; width: 60px; }
+        button { padding: 10px 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>🎰 Demo Slot Game</h1>
+    <p>Balance: <span id="balance">1000</span> credits</p>
+    <div>
+        <span class="reel" id="reel1">🍒</span>
+        <span class="reel" id="reel2">🍋</span>
+        <span class="reel" id="reel3">⭐</span>
+    </div>
+    <br>
+    <button onclick="spin()">Spin (Bet 50)</button>
+
+    <script>
+        let balance = 1000;
+        const symbols = ["🍒", "🍋", "🔔", "⭐", "💎"];
+
+        function spin() {
+            if (balance < 50) {
+                alert("Not enough credits!");
+                return;
+            }
+            balance -= 50;
+
+            // Random reels
+            let r1 = symbols[Math.floor(Math.random() * symbols.length)];
+            let r2 = symbols[Math.floor(Math.random() * symbols.length)];
+            let r3 = symbols[Math.floor(Math.random() * symbols.length)];
+
+            document.getElementById("reel1").textContent = r1;
+            document.getElementById("reel2").textContent = r2;
+            document.getElementById("reel3").textContent = r3;
+
+            // Win check
+            if (r1 === r2 && r2 === r3) {
+                balance += 300; // win amount
+                alert("🎉 You win 300 credits!");
+            }
+
+            document.getElementById("balance").textContent = balance;
+        }
+    </script>
+</body>
+</html>
