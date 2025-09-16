@@ -1,0 +1,271 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+
+/* preloader */
+#preloader {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    background-color: #030515;
+  }
+  .wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .loader {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 16px solid purple;
+    border-top: 16px solid blue;
+    border-right: 16px solid green;
+    border-bottom: 16px solid red;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .preloader.hidden {
+    display: none;
+  }
+
+
+
+/* preloader */
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    /* background: url("./image/login_background.jpg") no-repeat; */
+    background-image: url('./image/bg_banner.png'); 
+    background-position: center;
+    background-size: cover;
+}
+
+.form-box {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur(15px) brightness(80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+/* animations: start */
+input:focus~label,
+input:valid~label {
+    top: -5px;
+}
+
+/* animation:end */
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+.forget {
+    margin: -10px 0 17px;
+    font-size: 0.9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all .7s ease-in-out;
+
+}
+button:hover {
+    background-color: #ff0808;
+    transition: all .7s ease-in-out;
+
+}
+.backbtn_botton{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.backbtn_botton span{
+        color: #ffffff;
+ }
+
+.register {
+    font-size: 0.9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+    .form-box {
+        width: 100%;
+        border-radius: 0px;
+    }
+}
+
+.backbtn{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    backdrop-filter: blur(15px) brightness(80%);
+}
+.backbtn img{
+    height: 16px;
+    width: 16px;
+
+}
+.backbtn span{
+    font-size: 24px;
+    color: #fff;
+}
+@media screen and (max-width: 575px) {
+
+    .backbtn {
+        position: absolute;
+        top: 50px;
+        left: 68px;
+        padding: 10px;
+        background: transparent;
+        border: none;
+        border-radius: 8px;
+        z-index: 99;
+        backdrop-filter: blur(15px) brightness(80%);
+    }
+    .form-box {
+        position: relative;
+        width: 400px;
+        height: 382px;
+        background: transparent;
+        border: none;
+        border-radius: 20px;
+        backdrop-filter: blur(15px) brightness(80%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+@media screen and (max-width: 478px) {
+    .inputbox {
+        width: 240px;
+        margin: 15px 0;
+        border-bottom: 1px solid #fff;
+    }
+    .form-box {
+        width: 311px;
+        height: 415px;
+    }
+}
+@media screen and (max-width: 1399px) {
+    .backbtn {
+        display: none;
+    }
+    .backbtn_botton{
+       display: flex;
+    }
+}
+@media screen and (min-width: 1399px) {
+    .backbtn_botton{
+        display: none;
+     }
+}
